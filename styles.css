@@ -97,3 +97,9 @@ button:hover {
     clear: both;
     display: table;
 }
+
+@media screen and (max-width: 720px) {
+    .clearfix button {
+        width: 100%;
+    }
+}
