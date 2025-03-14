@@ -37,7 +37,7 @@
         <input id="asetaSposti" type="email" placeholder="sähköposti@esimerkki.com" name="asetaSposti" required>
         <!-- Salasana -->
         <label for="asetaPsw"><b>Salasana</b></label>
-        <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="supsw" required>
+        <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="asetaPsw" required>
         <!-- Vahvista salasana -->
         <label for="vahvistaPsw"><b>Vahvista salasana</b></label>
         <input id="vahvistaPsw" type="password" placeholder="Vahvista salasana" name="vahvistaPsw" required>
@@ -54,6 +54,15 @@
       </div>
     </form>
   </div>
+  <!-- Sisään kirjautumiseen käytettävät input-kentät ja nappi. Muotoilen myöhemmin.-->
+  <form>
+    <label for="kNimi"><b>Käyttäjänimi</b></label>
+    <input id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
+    <label for="psw"><b>Salasana</b></label>
+    <input id="psw" type="password" placeholder="Salasana" name="psw" required>
+    <button id="kirjauduSisään">Kirjaudu sisään</button>
+  </form>
+
   <div class="container mt-4">
     <div id="hylly" class="row row-cols-auto">
       <!-- Myytävät esineet -->
