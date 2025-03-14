@@ -13,9 +13,20 @@
       <div class="container">
         <a href="#" class="navbar-brand">Kirpputori</a>
         <div class="ms-auto">
-          <div>
-            <button type="button" class="btn btn-success" onclick="">Kirjaudu</button>
+          <div style="position: relative;">
+            <button type="button" class="btn btn-success kirjaududd" onclick="kirjauduIkkuna()">Kirjaudu</button>
             <button type="button" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'">Luo tili</button>
+            <div id="id01" class="hide kirjaududd animate2">
+              <span onclick="kirjauduIkkuna()"
+              class="suljedd" title="Sulje ikkuna">&times;</span>
+              <form class="kirjaududd">
+                <label for="kNimi"><b class="kirjaududd">Käyttäjänimi</b></label>
+                <input class="kirjaududd" id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
+                <label for="psw"><b class="kirjaududd">Salasana</b></label>
+                <input class="kirjaududd" id="psw" type="password" placeholder="Salasana" name="psw" required>
+                <button id="kirjauduSisään">Kirjaudu sisään</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -25,7 +36,7 @@
   <div id="id02" class="modal">
     <form class="modal-content animate">
       <div class="container">
-        <span onclick="document.getElementById('id02').style.display='none'" class="sulje" title="Sulje Modal">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="sulje" title="Sulje ikkuna">&times;</span>
         <h1>Luo tili</h1>
         <p>Täytä tiedot luodaksesi tilin.</p>
         <hr>
@@ -54,15 +65,6 @@
       </div>
     </form>
   </div>
-  <!-- Sisään kirjautumiseen käytettävät input-kentät ja nappi. Muotoilen myöhemmin.-->
-  <form>
-    <label for="kNimi"><b>Käyttäjänimi</b></label>
-    <input id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
-    <label for="psw"><b>Salasana</b></label>
-    <input id="psw" type="password" placeholder="Salasana" name="psw" required>
-    <button id="kirjauduSisään">Kirjaudu sisään</button>
-  </form>
-
   <div class="container mt-4">
     <div id="hylly" class="row row-cols-auto">
       <!-- Myytävät esineet -->

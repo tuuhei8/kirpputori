@@ -1,12 +1,14 @@
-
+/* Yleistä */
 body {
     background-color: #f1f1f1;
 }
 
+/* Navigaatio */
 nav {
     background-color: darkslategray;
 }
 
+/* Tilin luonti- ikkuna */
 .modal {
     display: none;
     position: fixed;
@@ -98,8 +100,102 @@ button:hover {
     display: table;
 }
 
+/* Kirjaudu sisään- ikkuna */
+#id01 {
+    width: 460px;
+    height: 200px;
+    background-color: #bdbcbc;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    transition: height 2s;
+}
+
+#id01 input {
+    width: 95%;
+    padding: 5px 3px;
+    margin: 5px 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#id01 form {
+    border: none;
+}
+
+#id01 button {
+    background-color: #058d5b;
+    color: white;
+    padding: 8px 10px;
+    margin: 5px 0px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    opacity: 0.9;
+    border-radius: 50px;
+}
+
+#id01 button:hover {
+    opacity: 1;
+}
+
+.suljedd {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.suljedd:hover,
+.suljedd:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.animate2 {
+    -webkit-animation: animatedd 0.3s;
+    animation: animatedd 0.3s;
+}
+  
+@-webkit-keyframes animatedd {
+    from {-webkit-top: 0px}
+    to {-webkit-top: 35px}
+}
+  
+@keyframes animatedd {
+    from {top: 0px}
+    to {top: 35px}
+}
+
+/* Mobiili */
 @media screen and (max-width: 720px) {
     .clearfix button {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #id01 {
+        width: 100%;
+        position: relative;
+    }
+
+    #id01 button {
+        width: 100%;
+    }
+
+    .animate2 {
+        -webkit-animation: animatedd 0;
+        animation: animatedd 0;
     }
 }
