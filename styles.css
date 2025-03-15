@@ -112,7 +112,6 @@ button:hover {
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-    transition: height 2s;
 }
 
 #id01 input {
@@ -158,9 +157,28 @@ button:hover {
     cursor: pointer;
 }
 
+/* Kirjautumisikkunan animaatio */
 .hide {
     display: none;
+    opacity: 0;
+    transition: all 0.3s ease allow-discrete;
 }
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+@starting-style {
+    .show {
+        opacity: 0;
+        translate: 0 -35px;
+    }
+}
+
+/* Vaihtoehtoinen ratkaisu kirjautumisikkunan animaatiolle,
+käyttö vaatii muutoksia js:ään ja .animate2 luokan lisäämisen html:ään,
+voi aiheuttaa ongelmia opasiteetin transition kanssa.
 
 .animate2 {
     -webkit-animation: animatedd 0.3s;
@@ -176,6 +194,7 @@ button:hover {
     from {top: 0px}
     to {top: 35px}
 }
+*/
 
 /* Mobiili */
 @media screen and (max-width: 720px) {
