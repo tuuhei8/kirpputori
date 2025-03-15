@@ -168,7 +168,7 @@ button:hover {
     display: block;
     opacity: 1;
 }
-
+/* VSC voi valittaa ettei tunnista @starting-style sääntöä mutta kyllä se toimii */
 @starting-style {
     .show {
         opacity: 0;
