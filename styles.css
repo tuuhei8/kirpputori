@@ -8,19 +8,29 @@ body {
     flex-direction: column;
 }
 
+.btn {
+    margin: 2px 0px;
+}
+
 /* Navigaatio */
 nav {
     background-color: darkslategray;
 }
 
-.btn {
-    margin: 2px 0px;
-}
-
-
 /* Pudotusvalikko */
 .dropdown {
     position: relative;
+}
+
+.dropdownbtn {
+    background-color: rgb(143, 36, 36);
+    color: white;
+    border: none;
+    opacity: 0.9;
+}
+
+.dropdownbtn:hover {
+    color: white;
 }
 
 .dropdownContent {
@@ -112,7 +122,7 @@ nav {
     opacity: 0.9;
 }
 
-button:hover {
+.clearfix button:hover {
     opacity:1;
 }
 
