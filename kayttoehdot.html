@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
-  <title>Kirpputori</title>
+  <title>Käyttöehdot</title>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-dark border-5 border-bottom border-success">
       <div class="container">
-        <a href="#" class="navbar-brand">Kirpputori</a>
+        <a href="index.html" class="navbar-brand">Kirpputori</a>
         <!-- Pudotusvalikko -->
-        <div class="dropdown">
-          <button type="button" class="btn btn-success dropdownbtn">dropdown<i class="bi bi-caret-down-fill"></i></button>
-          <div class="dropdownContent">
-            <a href="kayttoehdot.html">Käyttöehdot</a>
-            <a href="kayttoehdot.html">Käyttöehdot</a>
-            <a href="kayttoehdot.html">Käyttöehdot</a>
-          </div>
-        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Etusivu</a>
+          </li>
+        </ul>
         <!-- Kirjautumisnapit -->
         <div class="ms-auto">
           <div style="position: relative;">
-            <div id="navNapit">
+            <div id="kirjautumisNapit">
               <button type="button" class="btn btn-success kirjaududd" onclick="kirjauduIkkuna()">Kirjaudu</button>
               <button type="button" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'">Luo tili</button>
             </div>
@@ -82,31 +79,9 @@
       </div>
     </form>
   </div>
-  <div class="container mt-4">
-    <div id="hylly" class="row row-cols-auto">
-      <!-- Myytävät esineet -->
-       <div class="esineet">
-        <h3 class="text-center m-4">Otsikko</h3>
-        <h5 class="mt-2">Kuvaus:</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias corrupti tempora aliquam iure iusto sint eveniet soluta non necessitatibus libero dolores unde, asperiores sed placeat nam velit repellendus delectus. Eum!</p>
-        <div class="text-center m-4">
-          <h5>Hinta:</h5><span><strong>100€</strong></span>
-        </div>
-        <div class="text-center m-4">
-          <button class="btn btn-success">Lisää ostoskoriin</button>
-        </div>
-       </div>
-       <div class="esineet"></div>
-       <div class="esineet"></div>
-       <div class="esineet"></div>
-       <div class="esineet"></div>
-       <div class="esineet"></div>
-    </div>
-  </div>
-  <div class="upArrow hide">
-    <a href="#">
-      <i class="bi bi-arrow-up-circle-fill"></i>
-    </a>
+  <div class="container">
+    <h1>Käyttöehdot</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis exercitationem necessitatibus eum doloremque cum impedit illo voluptas? Aperiam asperiores saepe atque rerum ad labore nulla. Aliquam quia nihil facilis repudiandae!</p>
   </div>
   <footer>
     <span>näyttö&copy;esimerkki</span>

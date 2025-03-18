@@ -1,11 +1,51 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 /* Yleistä */
 body {
     background-color: #f1f1f1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /* Navigaatio */
 nav {
     background-color: darkslategray;
+}
+
+.btn {
+    margin: 2px 0px;
+}
+
+
+/* Pudotusvalikko */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdownContent a {
+    float: none;
+    color: black;
+    padding: 7px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
 }
 
 /* Tilin luonti- ikkuna */
@@ -60,19 +100,6 @@ nav {
     to {transform: scale(1)}
 }
 
-form {
-    border: 3px solid #f1f1f1;
-}
-  
-input[type=text], input[type=password], input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
 .clearfix button {
     background-color: #04AA6D;
     color: white;
@@ -98,6 +125,20 @@ button:hover {
     content: "";
     clear: both;
     display: table;
+}
+
+/* Kaavakkeet */
+form {
+    border: 3px solid #f1f1f1;
+}
+  
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 /* Kirjaudu sisään- ikkuna */
@@ -195,6 +236,36 @@ voi aiheuttaa ongelmia opasiteetin transition kanssa.
     to {top: 35px}
 }
 */
+
+.upArrow {
+    font-size: 2rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px 20px;
+}
+
+.upArrow i {
+    color: #04AA6D;
+}
+
+.esineet {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 10px;
+}
+
+footer {
+    margin-top: auto;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
 
 /* Mobiili */
 @media screen and (max-width: 720px) {
