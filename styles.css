@@ -23,13 +23,13 @@ nav {
 }
 
 .dropdownbtn {
-    background-color: rgb(143, 36, 36);
+    background-color: rgb(160, 54, 160);
     color: white;
     border: none;
-    opacity: 0.9;
 }
 
 .dropdownbtn:hover {
+    background-color: rgb(146, 49, 146);
     color: white;
 }
 
