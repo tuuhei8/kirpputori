@@ -208,7 +208,7 @@ input[type=text], input[type=password], input[type=email] {
     cursor: pointer;
 }
 
-/* Kirjautumisikkunan animaatio */
+/* Kirjautumisikkunan ja ylös- nuolen animaatio */
 .hide {
     display: none;
     opacity: 0;
