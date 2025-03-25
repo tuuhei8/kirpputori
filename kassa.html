@@ -15,7 +15,42 @@
       </div>
     </nav>
   </header>
-  <div class="container">
+  <div class="container kassa">
     <h1>Kassa</h1>
+    <form>
+      <div class="row">
+        <input type="text" class="col" placeholder="Etunimi" required>
+        <input type="text" class="col" placeholder="Sukunimi" required>
+      </div>
+      <div class="row">
+        <input type="text" class="col" id="osoite" placeholder="Osoite" required>
+      </div>
+      <div class="row">
+        <input type="text" class="col-4" id="postiNumero" placeholder="Postinumero" required>
+        <input type="text" class="col" placeholder="Paikkakunta" required>
+      </div>
+    </form>
+    <hr>
+    <ul class="maksutavat" style="list-style: none;">
+      <li>
+        <input type="radio" name="maksutapa" id="m1">
+        <label for="m1">Maksutapa 1</label>
+      </li>
+      <li>
+        <input type="radio" name="maksutapa" id="m2">
+        <label for="m2">Maksutapa 2</label>
+      </li>
+      <li>
+        <input type="radio" name="maksutapa" id="m3">
+        <label for="m3">Maksutapa 3</label>
+      </li>
+    </ul>
+    <div class="text-center">
+      <button id="tilausNappi">Vahvista</button>
+    </div>
   </div>
+  <footer>
+    <span>näyttö &copy; 2025 esimerkki</span>
+  </footer>
+  <script src="main.js"></script>
 </body>

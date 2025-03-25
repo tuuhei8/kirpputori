@@ -153,6 +153,54 @@ input[type=text], input[type=password], input[type=email] {
     box-sizing: border-box;
 }
 
+.kassa {
+    width: 60%;
+}
+
+.kassa > form {
+    background-color: #c9c8c8;
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.kassa form > div > input[type=text] {
+    margin: 5px;
+}
+
+#postiNumero {
+    width: 30%;
+}
+
+.maksutavat {
+    border-left: lightgrey solid 2px;
+}
+
+.maksutavat li {
+    width: 90%;
+    margin: 2px 0px;
+    padding: 8px;
+    background-image: linear-gradient(0deg, rgb(74, 195, 195), rgb(76, 228, 228));
+    border-radius: 5px;
+}
+
+#tilausNappi {
+    width: 50%;
+    background-color: rgb(102, 184, 235);
+    border-radius: 5px;
+    color: white;
+    padding: 8px, 16px;
+    border: none;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    opacity: 0.9;
+}
+
+#tilausNappi:hover {
+    opacity: 1;
+}
+
 /* Kirjaudu sisään- ikkuna */
 #id01 {
     width: 460px;
@@ -249,6 +297,7 @@ voi aiheuttaa ongelmia opasiteetin transition kanssa.
 }
 */
 
+/* Palaa ylös- nappi */ 
 .upArrow {
     font-size: 2rem;
     position: fixed;
@@ -268,6 +317,7 @@ voi aiheuttaa ongelmia opasiteetin transition kanssa.
     margin: 10px;
 }
 
+/* Footer */
 footer {
     margin-top: auto;
     bottom: 0;
