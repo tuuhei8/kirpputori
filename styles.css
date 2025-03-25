@@ -204,7 +204,7 @@ input[type=text], input[type=password], input[type=email] {
 /* Kirjaudu sisään- ikkuna */
 #id01 {
     width: 460px;
-    height: 200px;
+    height: 220px;
     background-color: #bdbcbc;
     position: absolute;
     z-index: 1;
@@ -217,7 +217,7 @@ input[type=text], input[type=password], input[type=email] {
 
 #id01 input {
     width: 95%;
-    padding: 5px 3px;
+    padding: 8px 12px;
     margin: 5px 5px;
     display: inline-block;
     border-radius: 5px;

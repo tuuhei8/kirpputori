@@ -12,6 +12,40 @@
     <nav class="navbar navbar-dark border-5 border-bottom border-success">
       <div class="container">
         <a href="ostoskori.html" class="navbar-brand">Palaa ostoskoriin</a>
+        <!-- Pudotusvalikko -->
+        <div class="dropdown">
+          <button type="button" class="btn dropdownbtn">Avaa valikko<i class="bi bi-caret-down-fill"></i></button>
+          <div class="dropdownContent">
+            <a href="kayttoehdot.html">Kayttoehdot</a>
+            <a href="ostoskori.html">Ostoskori</a>
+            <a href="kassa.html">Kassa</a>
+          </div>
+        </div>
+        <!-- Kirjautumisnapit -->
+        <div class="ms-auto">
+          <div style="position: relative;">
+            <div id="navNapit">
+              <button type="button" id="login" class="btn btn-success kirjaududd" onclick="kirjauduIkkuna()">Kirjaudu</button>
+              <button type="button" id="createAccount" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'">Luo tili</button>
+            </div>
+            <!-- Kirjaudu ikkuna -->
+            <div id="id01" class="hide kirjaududd">
+              <span onclick="kirjauduIkkuna()"
+              class="suljedd" title="Sulje ikkuna">&times;</span>
+              <form id="loginForm" class="kirjaududd">
+                <label for="kNimi"><b class="kirjaududd">Käyttäjänimi</b></label>
+                <input class="kirjaududd" id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
+                <label for="psw"><b class="kirjaududd">Salasana</b></label>
+                <input class="kirjaududd" id="psw" type="password" placeholder="Salasana" name="psw" required>
+                <button id="kirjauduSisään">Kirjaudu sisään</button>
+              </form>
+            </div>
+          </div>
+          <!-- Kirjaudu ulos nappi -->
+          <div id="logout" style="display: none;">
+            <button type="button" class="btn btn-success" id="kirjauduUlos">Kirjaudu ulos</button>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -45,6 +79,14 @@
         <label for="m3">Maksutapa 3</label>
       </li>
     </ul>
+    <div>
+      <form>
+        <div>
+          <input type="number">
+          <input type="number">
+        </div>
+      </form>
+    </div>
     <div class="text-center">
       <button id="tilausNappi">Vahvista</button>
     </div>
