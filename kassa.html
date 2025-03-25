@@ -18,7 +18,7 @@
           <div class="dropdownContent">
             <a href="kayttoehdot.html">Kayttoehdot</a>
             <a href="ostoskori.html">Ostoskori</a>
-            <a href="kassa.html">Kassa</a>
+            <a href="index.html">Etusivu</a>
           </div>
         </div>
         <!-- Kirjautumisnapit -->
@@ -49,6 +49,39 @@
       </div>
     </nav>
   </header>
+  <!-- Tilin luonti -->
+  <div id="id02" class="modal">
+    <form id="registrationForm" class="modal-content animate">
+      <div class="container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="sulje" title="Sulje ikkuna">&times;</span>
+        <h1>Luo tili</h1>
+        <p>Täytä tiedot luodaksesi tilin.</p>
+        <hr>
+        <!-- Käyttäjänimi -->
+        <label for="kayttajaNimi"><b>Käyttäjänimi</b></label>
+        <input id="kayttajaNimi" type="text" placeholder="Aseta käyttäjänimi" name="kayttajaNimi" required>
+        <!-- Sähköposti -->
+        <label for="asetaSposti"><b>Sähköposti</b></label>
+        <input id="asetaSposti" type="email" placeholder="sähköposti@esimerkki.com" name="asetaSposti" required>
+        <!-- Salasana -->
+        <label for="asetaPsw"><b>Salasana</b></label>
+        <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="asetaPsw" required>
+        <!-- Vahvista salasana -->
+        <label for="vahvistaPsw"><b>Vahvista salasana</b></label>
+        <input id="vahvistaPsw" type="password" placeholder="Vahvista salasana" name="vahvistaPsw" required>
+        <label>
+          <input id="asetaAdmin" type="checkbox" name="admin" style="margin-bottom:15px"> Admin
+        </label>
+        <p id="ehdot">
+          Luomalla tilin hyväksyt <a href="kayttoehdot.html">käyttöehtomme</a>.
+        </p>
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="peruutaNappi">Peruuta</button>
+          <button type="submit" class="vahvistaNappi" id="luoTili">Luo tili</button>
+        </div>
+      </div>
+    </form>
+  </div>
   <div class="container kassa">
     <h1>Kassa</h1>
     <form>
