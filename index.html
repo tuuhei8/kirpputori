@@ -25,14 +25,14 @@
         <div class="ms-auto">
           <div style="position: relative;">
             <div id="navNapit">
-              <button type="button" class="btn btn-success kirjaududd" onclick="kirjauduIkkuna()">Kirjaudu</button>
-              <button type="button" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'">Luo tili</button>
+              <button type="button" id="login" class="btn btn-success kirjaududd" onclick="kirjauduIkkuna()">Kirjaudu</button>
+              <button type="button" id="createAccount" class="btn btn-success" onclick="document.getElementById('id02').style.display='block'">Luo tili</button>
             </div>
             <!-- Kirjaudu ikkuna -->
             <div id="id01" class="hide kirjaududd">
               <span onclick="kirjauduIkkuna()"
               class="suljedd" title="Sulje ikkuna">&times;</span>
-              <form class="kirjaududd">
+              <form id="loginForm" class="kirjaududd">
                 <label for="kNimi"><b class="kirjaududd">Käyttäjänimi</b></label>
                 <input class="kirjaududd" id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
                 <label for="psw"><b class="kirjaududd">Salasana</b></label>
@@ -42,7 +42,7 @@
             </div>
           </div>
           <!-- Kirjaudu ulos nappi -->
-          <div style="display: none;">
+          <div id="logout" style="display: none;">
             <button type="button" class="btn btn-success" id="kirjauduUlos">Kirjaudu ulos</button>
           </div>
         </div>
@@ -51,7 +51,7 @@
   </header>
   <!-- Tilin luonti -->
   <div id="id02" class="modal">
-    <form class="modal-content animate">
+    <form id="registrationForm" class="modal-content animate">
       <div class="container">
         <span onclick="document.getElementById('id02').style.display='none'" class="sulje" title="Sulje ikkuna">&times;</span>
         <h1>Luo tili</h1>
