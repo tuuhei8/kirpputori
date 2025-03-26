@@ -97,7 +97,6 @@
         <input type="text" class="col" placeholder="Paikkakunta" required>
       </div>
     </form>
-    <hr>
     <ul class="maksutavat" style="list-style: none;">
       <li>
         <input type="radio" name="maksutapa" id="m1">
@@ -112,17 +111,23 @@
         <label for="m3">Maksutapa 3</label>
       </li>
     </ul>
+    <hr>
     <div>
       <form>
-        <div>
-          <input type="number">
-          <input type="number">
+        <div class="row">
+          <input class="col" type="text">
+          <input class="col" type="text">
         </div>
       </form>
     </div>
     <div class="text-center">
       <button id="tilausNappi">Vahvista</button>
     </div>
+  </div>
+  <div class="upArrow hide">
+    <a href="#">
+      <i class="bi bi-arrow-up-circle-fill"></i>
+    </a>
   </div>
   <footer>
     <span>näyttö &copy; 2025 esimerkki</span>
