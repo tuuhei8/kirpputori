@@ -16,9 +16,10 @@
         <div class="dropdown">
           <button type="button" class="btn dropdownbtn">Avaa valikko<i class="bi bi-caret-down-fill"></i></button>
           <div class="dropdownContent">
-            <a href="kayttoehdot.html">Kayttoehdot</a>
-            <a href="index.html">Etusivu</a>
+            <a href="index.html">Etusiviu</a>
+            <a href="ostoskori.html">Ostoskori</a>
             <a href="kassa.html">Kassa</a>
+            <a href="kayttoehdot.html">Kayttoehdot</a>
           </div>
         </div>
         <!-- Kirjautumisnapit -->
@@ -58,13 +59,13 @@
         <p>Täytä tiedot luodaksesi tilin.</p>
         <hr>
         <!-- Käyttäjänimi -->
-        <label for="kayttajaNimi"><b>Käyttäjänimi</b></label>
+        <label for="kayttajaNimi"><b>Käyttäjänimi</b><span style="font-size: small;"> (Vähintään 5 merkkiä.)</span></label>
         <input id="kayttajaNimi" type="text" placeholder="Aseta käyttäjänimi" name="kayttajaNimi" required>
         <!-- Sähköposti -->
         <label for="asetaSposti"><b>Sähköposti</b></label>
         <input id="asetaSposti" type="email" placeholder="sähköposti@esimerkki.com" name="asetaSposti" required>
         <!-- Salasana -->
-        <label for="asetaPsw"><b>Salasana</b></label>
+        <label for="asetaPsw"><b>Salasana</b><span> (Salasanassa on oltava iso ja pieni kirjain sekä numero ja erikoismerkki.)</span></label>
         <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="asetaPsw" required>
         <!-- Vahvista salasana -->
         <label for="vahvistaPsw"><b>Vahvista salasana</b></label>
