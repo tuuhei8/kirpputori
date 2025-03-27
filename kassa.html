@@ -100,24 +100,42 @@
     </form>
     <ul class="maksutavat" style="list-style: none;">
       <li>
-        <input type="radio" name="maksutapa" id="m1">
+        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m1">
         <label for="m1">Maksutapa 1</label>
       </li>
       <li>
-        <input type="radio" name="maksutapa" id="m2">
+        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m2">
         <label for="m2">Maksutapa 2</label>
       </li>
       <li>
-        <input type="radio" name="maksutapa" id="m3">
+        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m3">
         <label for="m3">Maksutapa 3</label>
       </li>
     </ul>
     <hr>
     <div>
-      <form>
-        <div class="row">
-          <input class="col" type="text">
-          <input class="col" type="text">
+      <form class="row hide" id="mKaavake0">
+        <div>
+          <label for="tietoja1"><b>Maksutietoja 2</b></label>
+          <input class="col" id="tietoja1" name="tietoja1" type="text" placeholder="kaavake1">
+          <label for="tietoja2"><b>Maksutietoja 2</b></label>
+          <input class="col" id="tietoja2" name="tietoja2" type="text" placeholder="kaavake1">
+        </div>
+      </form>
+      <form class="row hide" id="mKaavake1">
+        <div>
+          <label for="tietoja3"><b>Maksutietoja 2</b></label>
+          <input class="col" id="tietoja3" name="tietoja3" type="text" placeholder="kaavake2">
+          <label for="tietoja4"><b>Maksutietoja 2</b></label>
+          <input class="col" id="tietoja4" name="tietoja4" type="text" placeholder="kaavake2">
+        </div>
+      </form>
+      <form class="row hide" id="mKaavake2">
+        <div>
+          <label for="tietoja5"><b>Maksutietoja 3</b></label>
+          <input class="col" id="tietoja5" name="tietoja5" type="text" placeholder="kaavake3">
+          <label for="tietoja6"><b>Maksutietoja 3</b></label>
+          <input class="col" id="tietoja6" name="tietoja6" type="text" placeholder="kaavake3">
         </div>
       </form>
     </div>

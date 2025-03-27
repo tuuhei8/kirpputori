@@ -139,3 +139,20 @@ window.onscroll = function() {
         arrow.classList.remove('show');
     }
 }
+
+// Maksutapa pudotusvalikko
+function showPaymentForm() {
+    const maksuValinnat = document.getElementsByName('maksutapa')
+
+    for (i = 0; i < maksuValinnat.length; i++) {
+        if (maksuValinnat[i].checked === false) {
+            document.getElementById(`mKaavake${i}`).classList.remove('show')
+        }
+    }
+
+    for (i = 0; i < maksuValinnat.length; i++) {
+        if (maksuValinnat[i].checked) {
+            document.getElementById(`mKaavake${i}`).classList.add('show')
+        }
+    }
+}
