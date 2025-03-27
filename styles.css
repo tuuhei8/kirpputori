@@ -19,6 +19,10 @@ nav {
     background-color: darkslategray;
 }
 
+nav .active {
+    background-color: lightblue;
+}
+
 /* Pudotusvalikko */
 .dropdown {
     position: relative;
@@ -53,7 +57,8 @@ nav {
 }
 
 .dropdownContent a:hover {
-    background-color: #ddd;
+    background-color: #a8a8a8;
+
 }
 
 .dropdown:hover .dropdownContent {
@@ -188,7 +193,7 @@ input[type=text], input[type=password], input[type=email] {
 
 #tilausNappi {
     width: 50%;
-    background-color: rgb(102, 184, 235);
+    background-color: rgb(17, 118, 180);
     border-radius: 5px;
     color: white;
     padding: 8px, 16px;
