@@ -140,23 +140,7 @@ window.onscroll = function() {
     }
 }
 
-// Maksutapa pudotusvalikko
-function showPaymentForm() {
-    const maksuValinnat = document.getElementsByName('maksutapa')
-
-    for (i = 0; i < maksuValinnat.length; i++) {
-        if (maksuValinnat[i].checked === false) {
-            document.getElementById(`mKaavake${i}`).classList.remove('show')
-        }
-    }
-
-    for (i = 0; i < maksuValinnat.length; i++) {
-        if (maksuValinnat[i].checked) {
-            document.getElementById(`mKaavake${i}`).classList.add('show')
-        }
-    }
-}
-
+// Kassa-sivun toiminnot
 function kassaSkriptit() {
     const tilaus = document.getElementById('paikka')
 
@@ -209,3 +193,20 @@ function kassaSkriptit() {
     }
 }
 
+
+// Maksutapa pudotusvalikko
+function showPaymentForm() {
+    const maksuValinnat = document.getElementsByName('maksutapa')
+
+    for (i = 0; i < maksuValinnat.length; i++) {
+        if (maksuValinnat[i].checked === false) {
+            document.getElementById(`mKaavake${i}`).classList.remove('show')
+        }
+    }
+
+    for (i = 0; i < maksuValinnat.length; i++) {
+        if (maksuValinnat[i].checked) {
+            document.getElementById(`mKaavake${i}`).classList.add('show')
+        }
+    }
+}
