@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <title>Kassa</title>
 </head>
-<body>
+<body onload="kassaSkriptit()">
   <header>
     <nav class="navbar navbar-dark border-5 border-bottom border-success">
       <div class="container">
@@ -85,19 +85,23 @@
   </div>
   <div class="container kassa">
     <h1>Kassa</h1>
-    <form>
+    <form id="paikka">
       <div class="row">
-        <input type="text" class="col" placeholder="Etunimi" required>
-        <input type="text" class="col" placeholder="Sukunimi" required>
+        <input type="text" class="col" id="etunimi" placeholder="Etunimi" autocapitalize="on" required>
+        <input type="text" class="col" id="sukunimi" placeholder="Sukunimi" autocapitalize="on" required>
       </div>
       <div class="row">
-        <input type="text" class="col" id="osoite" placeholder="Osoite" required>
+        <input type="text" class="col" id="osoite" placeholder="Osoite" autocapitalize="on" required>
       </div>
       <div class="row">
         <input type="text" class="col-4" id="postiNumero" placeholder="Postinumero" required>
-        <input type="text" class="col" placeholder="Paikkakunta" required>
+        <input type="text" class="col" id="paikkakunta" placeholder="Paikkakunta" autocapitalize="on" required>
+      </div>
+      <div class="text-center">
+        <button type="submit" id="tilausNappi">Vahvista</button>
       </div>
     </form>
+    <hr>
     <ul class="maksutavat" style="list-style: none;">
       <li>
         <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m1">
@@ -114,33 +118,33 @@
     </ul>
     <hr>
     <div>
-      <form class="row hide" id="mKaavake0">
+      <form class="hide" id="mKaavake0">
         <div>
           <label for="tietoja1"><b>Maksutietoja 2</b></label>
-          <input class="col" id="tietoja1" name="tietoja1" type="text" placeholder="kaavake1">
+          <input id="tietoja1" name="tietoja1" type="text" placeholder="kaavake1">
           <label for="tietoja2"><b>Maksutietoja 2</b></label>
-          <input class="col" id="tietoja2" name="tietoja2" type="text" placeholder="kaavake1">
+          <input id="tietoja2" name="tietoja2" type="text" placeholder="kaavake1">
         </div>
+        <button type="submit" class="btn btn-primary">Vahvista</button>
       </form>
-      <form class="row hide" id="mKaavake1">
+      <form class="hide" id="mKaavake1">
         <div>
           <label for="tietoja3"><b>Maksutietoja 2</b></label>
-          <input class="col" id="tietoja3" name="tietoja3" type="text" placeholder="kaavake2">
+          <input id="tietoja3" name="tietoja3" type="text" placeholder="kaavake2">
           <label for="tietoja4"><b>Maksutietoja 2</b></label>
-          <input class="col" id="tietoja4" name="tietoja4" type="text" placeholder="kaavake2">
+          <input id="tietoja4" name="tietoja4" type="text" placeholder="kaavake2">
         </div>
+        <button type="submit" class="btn btn-primary">Vahvista</button>
       </form>
-      <form class="row hide" id="mKaavake2">
+      <form class="hide" id="mKaavake2">
         <div>
           <label for="tietoja5"><b>Maksutietoja 3</b></label>
-          <input class="col" id="tietoja5" name="tietoja5" type="text" placeholder="kaavake3">
+          <input id="tietoja5" name="tietoja5" type="text" placeholder="kaavake3">
           <label for="tietoja6"><b>Maksutietoja 3</b></label>
-          <input class="col" id="tietoja6" name="tietoja6" type="text" placeholder="kaavake3">
+          <input id="tietoja6" name="tietoja6" type="text" placeholder="kaavake3">
         </div>
+        <button type="submit" class="btn btn-primary">Vahvista</button>
       </form>
-    </div>
-    <div class="text-center">
-      <button id="tilausNappi">Vahvista</button>
     </div>
   </div>
   <div class="upArrow hide">

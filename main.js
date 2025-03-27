@@ -156,3 +156,56 @@ function showPaymentForm() {
         }
     }
 }
+
+function kassaSkriptit() {
+    const tilaus = document.getElementById('paikka')
+
+    tilaus.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const etunimi = document.getElementById('etunimi').value
+        const sukunimi = document.getElementById('sukunimi').value
+        const osoite = document.getElementById('osoite').value
+        const postinumero = document.getElementById('postiNumero').value
+        const paikkakunta = document.getElementById('paikkakunta').value
+
+        if (!etunimi.trim() || etunimi.length < 2 || tarkistaNimi(etunimi) === false) {
+            document.getElementById('etunimi').focus()
+            console.log('etu');
+            return
+        }
+
+        if (!sukunimi.trim() || sukunimi.length < 2 || tarkistaNimi(sukunimi) === false) {
+            document.getElementById('sukunimi').focus()
+            console.log('suku'); 
+            return
+        }
+
+        if (!osoite.trim() || tarkistaOsoite(osoite) === false) {
+            document.getElementById('osoite').focus()
+            console.log('osoite');
+            return
+        }
+
+        if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
+            document.getElementById('postiNumero').focus()
+            console.log('posti');
+            return
+        }
+
+        if (paikkakunta.trim() || paikkakunta.length < 2 || tarkistaNimi(paikkakunta)) {
+            document.getElementById('paikkakunta').focus()
+            return
+        }
+
+    })
+
+    function tarkistaNimi(nimi) {
+        return /^[A-Zåäö]+[a-zåäö]+$/.test(nimi);
+    }
+
+    function tarkistaOsoite(osoite) {
+        return /^[A-Zåäö]+[a-zåäö]+\s[0-9]+$/.test(osoite);
+    }
+}
+

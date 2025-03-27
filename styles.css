@@ -155,6 +155,7 @@ input[type=text], input[type=password], input[type=email] {
 
 .kassa {
     width: 60%;
+    margin-bottom: 100px;
 }
 
 .kassa form {
@@ -194,7 +195,6 @@ input[type=text], input[type=password], input[type=email] {
     border: none;
     font-size: 1.5rem;
     margin-top: 10px;
-    margin-bottom: 100px;
     opacity: 0.9;
 }
 
