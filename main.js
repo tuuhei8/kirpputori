@@ -142,7 +142,7 @@ window.onscroll = function() {
 
 // Kassa-sivun toiminnot
 function kassaSkriptit() {
-    const tilaus = document.getElementById('paikka')
+    const tilaus = document.getElementById('kassa01')
 
     tilaus.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -152,47 +152,77 @@ function kassaSkriptit() {
         const osoite = document.getElementById('osoite').value
         const postinumero = document.getElementById('postiNumero').value
         const paikkakunta = document.getElementById('paikkakunta').value
+        let valid = true
 
-        if (!etunimi.trim() || etunimi.length < 2 || tarkistaNimi(etunimi) === false) {
+        if (!etunimi.trim() || etunimi.length < 2 || !tarkistaNimi(etunimi)) {
             document.getElementById('etunimi').focus()
             console.log('etu');
+            valid = false
             return
         }
 
-        if (!sukunimi.trim() || sukunimi.length < 2 || tarkistaNimi(sukunimi) === false) {
+        if (!sukunimi.trim() || sukunimi.length < 2 || !tarkistaNimi(sukunimi)) {
             document.getElementById('sukunimi').focus()
-            console.log('suku'); 
+            console.log('suku');
+            valid = false
             return
         }
 
-        if (!osoite.trim() || tarkistaOsoite(osoite) === false) {
+        if (!osoite.trim() || !tarkistaOsoite(osoite)) {
             document.getElementById('osoite').focus()
             console.log('osoite');
+            valid = false
             return
         }
 
         if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
             document.getElementById('postiNumero').focus()
             console.log('posti');
+            valid = false
             return
         }
 
-        if (paikkakunta.trim() || paikkakunta.length < 2 || tarkistaNimi(paikkakunta)) {
+        if (!paikkakunta.trim() || paikkakunta.length < 2 || !tarkistaNimi(paikkakunta)) {
             document.getElementById('paikkakunta').focus()
+            console.log(tarkistaNimi(paikkakunta.length, 'pkunta'));
+            valid = false
             return
         }
 
+        if (valid === true) {
+            const summary = {
+                sumEtunimi:etunimi,
+                sumSukunimi:sukunimi,
+                sumOsoite:osoite,
+                sumPostiNumero:postinumero,
+                sumPaikkakunta:paikkakunta
+            }
+            document.getElementById('kassa01').style.display = 'none'
+            document.getElementById('summary').style.display = 'block'
+            document.getElementById('sumEtunimi').innerHTML = summary.sumEtunimi
+            document.getElementById('sumSukunimi').innerHTML = summary.sumSukunimi
+            document.getElementById('sumOsoite').innerHTML = summary.sumOsoite
+            document.getElementById('sumPostiNumero').innerHTML = summary.sumPostiNumero
+            document.getElementById('sumPaikkakunta').innerHTML = summary.sumPaikkakunta
+            document.getElementById('kassa02').style.display = 'block'
+        }
+        
     })
-
-    function tarkistaNimi(nimi) {
-        return /^[A-Zåäö]+[a-zåäö]+$/.test(nimi);
-    }
-
-    function tarkistaOsoite(osoite) {
-        return /^[A-Zåäö]+[a-zåäö]+\s[0-9]+$/.test(osoite);
-    }
 }
 
+function tarkistaNimi(nimi) {
+    return /^[A-Zåäö]+[a-zåäö]+$/.test(nimi);
+}
+
+function tarkistaOsoite(osoite) {
+    return /^[A-Zåäö]+[a-zåäö]+\s[0-9]+$/.test(osoite);
+}
+
+function kassaPalaa() {
+    document.getElementById('summary').style.display = 'none'
+    document.getElementById('kassa02').style.display = 'none'
+    document.getElementById('kassa01').style.display = 'block'
+}
 
 // Maksutapa pudotusvalikko
 function showPaymentForm() {
