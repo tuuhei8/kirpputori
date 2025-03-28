@@ -222,6 +222,13 @@ function kassaPalaa() {
     document.getElementById('summary').style.display = 'none'
     document.getElementById('kassa02').style.display = 'none'
     document.getElementById('kassa01').style.display = 'block'
+
+    const maksuValinnat = document.getElementsByName('maksutapa')
+
+    for (i = 0; i < maksuValinnat.length; i++) {
+        maksuValinnat[i].checked = false
+        document.getElementById(`mKaavake${i}`).classList.remove('show')
+    }
 }
 
 // Maksutapa pudotusvalikko

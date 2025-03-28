@@ -84,7 +84,7 @@
     </form>
   </div>
   <div class="container kassa mt-4">
-    <h1>Kassa</h1>
+    <h1 class="mb-4">Kassa</h1>
     <form id="kassa01">
       <div class="row">
         <input type="text" class="col" id="etunimi" placeholder="Etunimi" autocapitalize="on" required>
@@ -102,6 +102,7 @@
       </div>
     </form>
     <div id="summary" style="display: none;">
+      <h5><b>Vastaanottajan tiedot:</b></h5>
       <dl>
         <dt><b>Nimi:</b></dt>
         <dd><span id="sumEtunimi"></span> <span id="sumSukunimi"></span></dd>
@@ -110,7 +111,7 @@
         <dd id="sumPostiNumero"></dd>
         <dd id="sumPaikkakunta"></dd>
       </dl>
-      <button onclick="kassaPalaa()" class="btn btn-primary">Palaa</button>
+      <button onclick="kassaPalaa()" class="btn btn-success">Palaa edelliseen vaiheeseen</button>
     </div>
     <ul class="maksutavat" id="kassa02" style="list-style: none; display: none;">
       <li>

@@ -178,6 +178,29 @@ input[type=text], input[type=password], input[type=email] {
     width: 30%;
 }
 
+#summary {
+    background-color: #c9c8c8;
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+#summary button {
+    width: 80%;
+    background-color: rgb(17, 118, 180);
+    border-radius: 5px;
+    color: white;
+    padding: 8px, 16px;
+    border: none;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+#summary button:hover {
+    opacity: 1;
+}
+
 .maksutavat {
     border-left: lightgrey solid 2px;
     margin: 2rem 0rem;
@@ -192,13 +215,13 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 #tilausNappi {
-    width: 50%;
+    width: 80%;
     background-color: rgb(17, 118, 180);
     border-radius: 5px;
     color: white;
     padding: 8px, 16px;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 10px;
     opacity: 0.9;
 }
@@ -330,6 +353,10 @@ footer {
     }
 
     #id01 button {
+        width: 100%;
+    }
+
+    .kassa {
         width: 100%;
     }
 }
