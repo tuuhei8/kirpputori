@@ -144,6 +144,30 @@ nav .active {
     display: table;
 }
 
+form div.incorrect label {
+    background-color: #f06272;
+}
+
+form div.incorrect input {
+    border-color: #f06272;
+}
+
+#form-message {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
 /* Kaavakkeet */
 form {
     border: 3px solid #f1f1f1;
