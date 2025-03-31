@@ -383,4 +383,12 @@ footer {
     .kassa {
         width: 100%;
     }
+
+    .ms-auto {
+        margin-left: 3px !important;
+    }
+
+    .ms-auto > div > #navNapit > button {
+        margin: 0px 3px;
+    }
 }
