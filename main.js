@@ -184,38 +184,48 @@ function kassaSkriptit() {
         let kVirheilmoitus = '';
 
         if (!etunimi.trim() || etunimi.length < 2 || !tarkistaNimi(etunimi)) {
-            document.getElementById('etunimi').focus();
+            document.getElementById('etunimi').classList.add('kassaBorder');
             kVirheilmoitus += '<p>Etunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
+        } else if (document.getElementById('etunimi').classList.contains('kassaBorder')) {
+            document.getElementById('etunimi').classList.remove('kassaBorder')
         }
 
         if (!sukunimi.trim() || sukunimi.length < 2 || !tarkistaNimi(sukunimi)) {
-            document.getElementById('sukunimi').focus();
+            document.getElementById('sukunimi').classList.add('kassaBorder');
             kVirheilmoitus += '<p>Sukunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false; 
+        } else if (document.getElementById('sukunimi').classList.contains('kassaBorder')) {
+            document.getElementById('sukunimi').classList.remove('kassaBorder')
         }
 
         if (!osoite.trim() || !tarkistaOsoite(osoite)) {
-            document.getElementById('osoite').focus();
+            document.getElementById('osoite').classList.add('kassaBorder');
             kVirheilmoitus += '<p>Tarkista että katuosoite on kirjoitettu oikein. Esim. "Katu A1", "Katu 23".</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
+        } else if (document.getElementById('osoite').classList.contains('kassaBorder')) {
+            document.getElementById('osoite').classList.remove('kassaBorder')
         }
 
         if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
-            document.getElementById('postiNumero').focus();
+            document.getElementById('postiNumero').classList.add('kassaBorder');
             kVirheilmoitus += '<p>Postinumeron on koostuttava viidestä numerosta.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
+        } else if (document.getElementById('postiNumero').classList.contains('kassaBorder')) {
+            document.getElementById('postiNumero').classList.remove('kassaBorder')
         }
 
         if (!paikkakunta.trim() || paikkakunta.length < 2 || !tarkistaNimi(paikkakunta)) {
-            document.getElementById('paikkakunta').focus();
+            document.getElementById('paikkakunta').classList.add('kassaBorder');
             kVirheilmoitus += '<p>Paikkakunnan on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
+        } else if (document.getElementById('paikkakunta').classList.contains('kassaBorder')) {
+            document.getElementById('paikkakunta').classList.remove('kassaBorder')
         }
         
         if (valid === true) {
