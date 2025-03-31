@@ -181,42 +181,48 @@ function kassaSkriptit() {
         const postinumero = document.getElementById('postiNumero').value
         const paikkakunta = document.getElementById('paikkakunta').value
         let valid = true
+        let kVirheilmoitus = ''
 
         if (!etunimi.trim() || etunimi.length < 2 || !tarkistaNimi(etunimi)) {
             document.getElementById('etunimi').focus()
-            console.log('etu');
+            kVirheilmoitus = '<p>Tarkista että etunimi on kirjoitettu oikein.</p>'
+            kassaVirhe(kVirheilmoitus)
             valid = false
             return
         }
 
         if (!sukunimi.trim() || sukunimi.length < 2 || !tarkistaNimi(sukunimi)) {
             document.getElementById('sukunimi').focus()
-            console.log('suku');
+            kVirheilmoitus = '<p>Tarkista että sukunimi on kirjoitettu oikein.</p>'
+            kassaVirhe(kVirheilmoitus)
             valid = false
             return
         }
 
         if (!osoite.trim() || !tarkistaOsoite(osoite)) {
             document.getElementById('osoite').focus()
-            console.log('osoite');
+            kVirheilmoitus = '<p>Tarkista että osoite on kirjoitettu oikein.</p>'
+            kassaVirhe(kVirheilmoitus)
             valid = false
             return
         }
 
         if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
             document.getElementById('postiNumero').focus()
-            console.log('posti');
+            kVirheilmoitus = '<p>Tarkista että postinumero on oikein.</p>'
+            kassaVirhe(kVirheilmoitus)
             valid = false
             return
         }
 
         if (!paikkakunta.trim() || paikkakunta.length < 2 || !tarkistaNimi(paikkakunta)) {
             document.getElementById('paikkakunta').focus()
-            console.log(tarkistaNimi(paikkakunta.length, 'pkunta'));
+            kVirheilmoitus = '<p>Tarkista paikkakunnan oikeinkirjoitus.</p>'
+            kassaVirhe(kVirheilmoitus)
             valid = false
             return
         }
-
+        
         if (valid === true) {
             const summary = {
                 sumEtunimi:etunimi,
@@ -233,9 +239,13 @@ function kassaSkriptit() {
             document.getElementById('sumPostiNumero').innerHTML = summary.sumPostiNumero
             document.getElementById('sumPaikkakunta').innerHTML = summary.sumPaikkakunta
             document.getElementById('kassa02').style.display = 'block'
-        }
-        
+        } 
     })
+}
+
+function kassaVirhe(kVirheilmoitus) {
+    document.getElementById('kVirhe').innerHTML = kVirheilmoitus
+    console.log(kVirheilmoitus);
 }
 
 function tarkistaNimi(nimi) {
