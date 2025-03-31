@@ -245,7 +245,6 @@ function kassaSkriptit() {
 
 function kassaVirhe(kVirheilmoitus) {
     document.getElementById('kVirhe').innerHTML = kVirheilmoitus
-    console.log(kVirheilmoitus);
 }
 
 function tarkistaNimi(nimi) {
