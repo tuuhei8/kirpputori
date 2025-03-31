@@ -188,15 +188,13 @@ function kassaSkriptit() {
             kVirheilmoitus += '<p>Etunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
-         
         }
 
         if (!sukunimi.trim() || sukunimi.length < 2 || !tarkistaNimi(sukunimi)) {
             document.getElementById('sukunimi').focus();
             kVirheilmoitus += '<p>Sukunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
-            valid = false;
-           
+            valid = false; 
         }
 
         if (!osoite.trim() || !tarkistaOsoite(osoite)) {
@@ -204,7 +202,6 @@ function kassaSkriptit() {
             kVirheilmoitus += '<p>Tarkista että katuosoite on kirjoitettu oikein. Esim. "Katu A1", "Katu 23".</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
-          
         }
 
         if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
@@ -212,7 +209,6 @@ function kassaSkriptit() {
             kVirheilmoitus += '<p>Postinumeron on koostuttava viidestä numerosta.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
-           
         }
 
         if (!paikkakunta.trim() || paikkakunta.length < 2 || !tarkistaNimi(paikkakunta)) {
@@ -220,7 +216,6 @@ function kassaSkriptit() {
             kVirheilmoitus += '<p>Paikkakunnan on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
-          
         }
         
         if (valid === true) {
