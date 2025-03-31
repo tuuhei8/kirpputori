@@ -3,6 +3,7 @@
 // Kirjautumistoiminnot:
 const registrationForm = document.getElementById("registrationForm");
 const loginForm = document.getElementById("loginForm");
+const formMessage = document.getElementById("form-message");
 
 registrationForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -12,32 +13,54 @@ registrationForm.addEventListener("submit", function (event) {
     const password = document.getElementById("asetaPsw").value;
     const verifyPassword = document.getElementById("vahvistaPsw").value;
 
+    const allInputs = [document.getElementById("kayttajaNimi"), document.getElementById("asetaSposti"), document.getElementById("asetaPsw"), document.getElementById("vahvistaPsw")];
+
+    allInputs.forEach(input => {
+        input.addEventListener("input", () => {
+            formMessage.innerText = "";
+            if (input.parentElement.classList.contains("incorrect")) {
+                input.parentElement.classList.remove("incorrect");
+            }
+        });
+    });
+
     if (!username.trim() || username.length < 5) {
-        document.getElementById("kayttajaNimi").focus();
+        document.getElementById("kayttajaNimi").parentElement.classList.add('incorrect');
+        showMessage("Käyttäjänimen täytyy olla vähintään 5 merkkiä pitkä!", "error");
         return;
     }
 
-    if (!password.trim() || !isStrongPassword(password) || password != verifyPassword) {
-        document.getElementById("asetaPsw").focus();
+    if (!password.trim() || !isStrongPassword(password)) {
+        document.getElementById("asetaPsw").parentElement.classList.add('incorrect');
+        showMessage("Salasanan täytyy sisältää pieniä ja isoja kirjaimia, sekä sisältää yhden numeron ja erikoismerkin!", "error");
+        return;
+    }
+
+    if (verifyPassword != password) {
+        document.getElementById("vahvistaPsw").parentElement.classList.add('incorrect');
+        showMessage("Salasanat eivät täsmää!", "error");
         return;
     }
 
     if (!email.trim() || !isValidEmail(email)) {
-        document.getElementById("asetaSposti").focus();
+        document.getElementById("asetaSposti").parentElement.classList.add('incorrect');
+        showMessage("Tarkista sähköpostiosoite!", "error");
         return;
     }
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (users.some(user => user.email === email)) {
-        alert("Already exists");
+        //alert("Already exists");
+        showMessage("Tämä sähköposti on jo käytössä!", "error");
         return;
     }
 
     users.push({ username, email, password });
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Jep!");
+    //alert("Jep!");
+    showMessage("Tilin luominen onnistui!", "success");
     registrationForm.reset();
 
 });
@@ -49,6 +72,11 @@ function isValidEmail(email) {
 function isStrongPassword(password) {
     let tester = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-+.]).{6,20}$/;
     return tester.test(password);
+}
+
+function showMessage(message, type) {
+    formMessage.innerText = message;
+    formMessage.className = type;
 }
 
 loginForm.addEventListener("submit", function (event) {

@@ -59,23 +59,32 @@
         <p>Täytä tiedot luodaksesi tilin.</p>
         <hr>
         <!-- Käyttäjänimi -->
-        <label for="kayttajaNimi"><b>Käyttäjänimi</b><span style="font-size: small;"> (Vähintään 5 merkkiä.)</span></label>
-        <input id="kayttajaNimi" type="text" placeholder="Aseta käyttäjänimi" name="kayttajaNimi" required>
+        <div>
+          <label for="kayttajaNimi"><b>Käyttäjänimi</b><span style="font-size: small;"> (Vähintään 5 merkkiä.)</span></label>
+          <input id="kayttajaNimi" type="text" placeholder="Aseta käyttäjänimi" name="kayttajaNimi" required>
+        </div>
         <!-- Sähköposti -->
-        <label for="asetaSposti"><b>Sähköposti</b></label>
-        <input id="asetaSposti" type="email" placeholder="sähköposti@esimerkki.com" name="asetaSposti" required>
+        <div>
+          <label for="asetaSposti"><b>Sähköposti</b></label>
+          <input id="asetaSposti" type="email" placeholder="sähköposti@esimerkki.com" name="asetaSposti" required>
+        </div>
         <!-- Salasana -->
-        <label for="asetaPsw"><b>Salasana</b><span style="font-size: small;"> (Salasanassa on oltava iso ja pieni kirjain sekä numero ja erikoismerkki.)</span></label>
-        <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="asetaPsw" required>
+        <div>
+          <label for="asetaPsw"><b>Salasana</b><span> (Salasanassa on oltava iso ja pieni kirjain sekä numero ja erikoismerkki.)</span></label>
+          <input id="asetaPsw" type="password" placeholder="Aseta salasana" name="asetaPsw" required>
+        </div>
         <!-- Vahvista salasana -->
-        <label for="vahvistaPsw"><b>Vahvista salasana</b></label>
-        <input id="vahvistaPsw" type="password" placeholder="Vahvista salasana" name="vahvistaPsw" required>
+        <div>
+          <label for="vahvistaPsw"><b>Vahvista salasana</b></label>
+          <input id="vahvistaPsw" type="password" placeholder="Vahvista salasana" name="vahvistaPsw" required>
+        </div>
         <label>
           <input id="asetaAdmin" type="checkbox" name="admin" style="margin-bottom:15px"> Admin
         </label>
         <p id="ehdot">
           Luomalla tilin hyväksyt <a href="kayttoehdot.html">käyttöehtomme</a>.
         </p>
+        <p id="form-message"></p>
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id02').style.display='none'" class="peruutaNappi">Peruuta</button>
           <button type="submit" class="vahvistaNappi" id="luoTili">Luo tili</button>
