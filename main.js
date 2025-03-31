@@ -218,6 +218,7 @@ function tarkistaOsoite(osoite) {
     return /^[A-Zåäö]+[a-zåäö]+\s[0-9]+$/.test(osoite);
 }
 
+// Palaa edelliseen vaiheeseen kassa-sivulla
 function kassaPalaa() {
     document.getElementById('summary').style.display = 'none'
     document.getElementById('kassa02').style.display = 'none'
