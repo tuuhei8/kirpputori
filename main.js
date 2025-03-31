@@ -224,6 +224,8 @@ function kassaSkriptit() {
         }
         
         if (valid === true) {
+            kVirheilmoitus = ''
+            kassaVirhe(kVirheilmoitus)
             const summary = {
                 sumEtunimi:etunimi,
                 sumSukunimi:sukunimi,
