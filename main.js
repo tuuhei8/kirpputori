@@ -185,7 +185,7 @@ function kassaSkriptit() {
 
         if (!etunimi.trim() || etunimi.length < 2 || !tarkistaNimi(etunimi)) {
             document.getElementById('etunimi').focus();
-            kVirheilmoitus += '<p>Tarkista että etunimi on kirjoitettu oikein.</p>';
+            kVirheilmoitus += '<p>Etunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
          
@@ -193,7 +193,7 @@ function kassaSkriptit() {
 
         if (!sukunimi.trim() || sukunimi.length < 2 || !tarkistaNimi(sukunimi)) {
             document.getElementById('sukunimi').focus();
-            kVirheilmoitus += '<p>Tarkista että sukunimi on kirjoitettu oikein.</p>';
+            kVirheilmoitus += '<p>Sukunimen on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
            
@@ -201,7 +201,7 @@ function kassaSkriptit() {
 
         if (!osoite.trim() || !tarkistaOsoite(osoite)) {
             document.getElementById('osoite').focus();
-            kVirheilmoitus += '<p>Tarkista että osoite on kirjoitettu oikein.</p>';
+            kVirheilmoitus += '<p>Tarkista että katuosoite on kirjoitettu oikein. Esim. "Katu A1", "Katu 23".</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
           
@@ -209,7 +209,7 @@ function kassaSkriptit() {
 
         if (!postinumero.trim() || postinumero.length !== 5 || isNaN(postinumero)) {
             document.getElementById('postiNumero').focus();
-            kVirheilmoitus += '<p>Tarkista että postinumero on oikein.</p>';
+            kVirheilmoitus += '<p>Postinumeron on koostuttava viidestä numerosta.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
            
@@ -217,7 +217,7 @@ function kassaSkriptit() {
 
         if (!paikkakunta.trim() || paikkakunta.length < 2 || !tarkistaNimi(paikkakunta)) {
             document.getElementById('paikkakunta').focus();
-            kVirheilmoitus += '<p>Tarkista paikkakunnan oikeinkirjoitus.</p>';
+            kVirheilmoitus += '<p>Paikkakunnan on oltava vähintään 2 merkkiä ja alettava isolla kirjaimella.</p>';
             kassaVirhe(kVirheilmoitus);
             valid = false;
           
@@ -256,7 +256,7 @@ function tarkistaNimi(nimi) {
 }
 
 function tarkistaOsoite(osoite) {
-    return /^[A-Zåäö]+[a-zåäö]+\s[0-9]+$/.test(osoite);
+    return /^[A-Zåäö]+[a-zåäö]+\s[A-ZÅÄÖ0-9\d]+$/.test(osoite);
 }
 
 // Palaa edelliseen vaiheeseen kassa-sivulla
