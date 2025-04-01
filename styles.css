@@ -254,6 +254,10 @@ input[type=text], input[type=password], input[type=email] {
     opacity: 1;
 }
 
+.kassaBorder {
+    border: red solid 2px !important;
+}
+
 /* Kirjaudu sisään- ikkuna */
 #id01 {
     width: 460px;
