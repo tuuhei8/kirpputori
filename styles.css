@@ -388,7 +388,15 @@ footer {
     }
 
     .dropdown {
-        margin-right: 5px;
+        width: 100%;
+    }
+
+    .dropdownContent {
+        width: 100%;
+    }
+
+    .dropdown .btn{
+        width: 100%;
     }
 
     .ms-auto {
@@ -396,7 +404,7 @@ footer {
         width: 100%;
     }
 
-    #navNapit > button {
-        width: 49% !important;
+    #navNapit > .btn {
+        width: 100%;
     }
 }
