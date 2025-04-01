@@ -58,7 +58,6 @@ nav .active {
 
 .dropdownContent a:hover {
     background-color: #a8a8a8;
-
 }
 
 .dropdown:hover .dropdownContent {
@@ -388,11 +387,16 @@ footer {
         width: 100%;
     }
 
-    .ms-auto {
-        margin-left: 3px !important;
+    .dropdown {
+        margin-right: 5px;
     }
 
-    .ms-auto > div > #navNapit > button {
-        margin: 0px 3px;
+    .ms-auto {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    #navNapit > button {
+        width: 49% !important;
     }
 }
