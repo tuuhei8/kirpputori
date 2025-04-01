@@ -93,17 +93,20 @@
       </div>
     </form>
   </div>
-  <main class="container mt-4">
-    <h2 class="mb-4 text-center">Tilaukset</h2>
+<main class="container mt-4">
+    <h2 class="mb-4 text-center">Myyntisivu</h2>
     <form id="orderForm" class="row g-3">
-        <div class="col-md-5">
+        <div class="col-md-4">
             <input type="text" id="item" class="form-control" placeholder="Tuotteen nimi" required>
         </div>
-        <div class="col-md-3">
-            <input type="number" id="quantity" class="form-control" placeholder="Määrä" required>
+        <div class="col-md-2">
+            <input type="number" id="quantity" class="form-control" placeholder="Määrä" min="1" required>
         </div>
         <div class="col-md-2">
-            <button type="submit" class="btn btn-success">Lisää tilaus</button>
+            <input type="number" id="price" class="form-control" placeholder="Hinta (€)" step="0.01" min="0.01" required>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success">Lisää tuote</button>
         </div>
     </form>
     
@@ -112,6 +115,8 @@
             <tr>
                 <th>Tuote</th>
                 <th>Määrä</th>
+                <th>Hinta (€)</th>
+                <th>Yhteensä (€)</th>
                 <th>Toiminto</th>
             </tr>
         </thead>
