@@ -95,6 +95,7 @@
   </div>
   <div class="container kassa mt-4">
     <h1 class="mb-4">Kassa</h1>
+    <!-- Ostaja täyttää henkilötiedot -->
     <form id="kassa01">
       <div class="row">
         <input type="text" class="col" id="etunimi" placeholder="Etunimi" autocapitalize="on" required>
@@ -112,6 +113,7 @@
         <button type="submit" id="tilausNappi">Vahvista</button>
       </div>
     </form>
+    <!-- Ostajan tiedot tiivistettynä -->
     <div id="summary" style="display: none;">
       <h5><b>Vastaanottajan tiedot:</b></h5>
       <dl>
@@ -124,6 +126,7 @@
       </dl>
       <button onclick="kassaPalaa()" class="btn btn-success">Palaa edelliseen vaiheeseen</button>
     </div>
+    <!-- Maksuvaihtoehtoja -->
     <ul class="maksutavat" id="kassa02" style="list-style: none; display: none;">
       <li>
         <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m1">
@@ -139,6 +142,7 @@
       </li>
     </ul>
     <hr>
+    <!-- Pudotusikkunoita eri maksuvaihtoehdoille -->
     <div>
       <form class="hide" id="mKaavake0">
         <div>

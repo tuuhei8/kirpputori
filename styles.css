@@ -387,6 +387,10 @@ footer {
         width: 100%;
     }
 
+    .dropdown {
+        margin-right: 5px;
+    }
+
     .ms-auto {
         margin-left: 0 !important;
         width: 100%;
