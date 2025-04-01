@@ -15,7 +15,7 @@ registrationForm.addEventListener("submit", function (event) {
 
     const allInputs = [document.getElementById("kayttajaNimi"), document.getElementById("asetaSposti"), document.getElementById("asetaPsw"), document.getElementById("vahvistaPsw")];
 
-    allInputs.forEach(input => {
+    allInputs.forEach(input => { //Clear the error messages if the user starts typing again
         input.addEventListener("input", () => {
             formMessage.innerText = "";
             if (input.parentElement.classList.contains("incorrect")) {
@@ -89,13 +89,30 @@ loginForm.addEventListener("submit", function (event) {
 
     const user = users.find(user => user.username === username && user.password === password);
 
+    const allInputs = [document.getElementById("kNimi"), document.getElementById("psw")];
+
+    allInputs.forEach(input => { //Clear the errors if the user starts typing again
+        input.addEventListener("input", () => {
+            formMessage.innerText = "";
+            if (input.parentElement.classList.contains("incorrect")) {
+                input.parentElement.classList.remove("incorrect");
+            }
+        });
+    });
+
     if (user) {
         localStorage.setItem("loggedInUser", JSON.stringify(user));
         document.getElementById("logout").style.display = "block";
         document.getElementById("login").style.display = "none";
         document.getElementById("createAccount").style.display = "none";
-    } else {
-        alert("Ei");
+        showMessage("Kirjautuminen onnistui!", "success");
+
+        setTimeout(() => { //Close the login window automatically in 2 seconds if the user info is correct
+            document.getElementById("id01").classList.remove("show");
+        }, 2000);
+    } else { //throw errors
+        showMessage("Tarkista käyttäjätiedot!", "error");
+        return;
     }
 });
 
@@ -146,14 +163,14 @@ function kirjauduIkkuna() {
     document.getElementById('id01').classList.toggle('show');
 }
 
-window.onclick = function(event) {
-    if (!event.target.matches('.kirjaududd')) {
-        let luokat = document.getElementById('id01').classList;
-        if (luokat.contains('show')) {
-            luokat.remove('show');
-        }
-    }
-}
+// window.onclick = function(event) {
+//     if (!event.target.matches('.kirjaududd')) {
+//         let luokat = document.getElementById('id01').classList;
+//         if (luokat.contains('show')) {
+//             luokat.remove('show');
+//         }
+//     }
+// }
 
 // Nuoli-painike sivun yläosaan palaamiseksi
 const arrow = document.querySelector(".upArrow");
