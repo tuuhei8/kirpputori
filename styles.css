@@ -237,6 +237,20 @@ input[type=text], input[type=password], input[type=email] {
     border-radius: 5px;
 }
 
+.maksutavat > li > label {
+    width: 95%;
+}
+
+.maksutavat > li:hover {
+    background-image: linear-gradient(0deg, rgb(66, 172, 172), rgb(76, 228, 228));
+    cursor: pointer;
+}
+
+.maksutavat > li > label:hover,
+.maksutavat > li > input:hover {
+    cursor: pointer;
+}
+
 #tilausNappi {
     width: 80%;
     background-color: rgb(17, 118, 180);
@@ -363,7 +377,23 @@ footer {
     width: 100%;
     background-color: #000;
     color: white;
-    text-align: center;
+}
+
+#footerNav {
+    list-style: none;
+    display: flex;
+}
+
+#footerNav a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 3px;
+    opacity: 0.8;
+}
+
+#footerNav a:hover {
+    text-decoration: underline;
+    opacity: 1;
 }
 
 /* Mobiili */
@@ -414,5 +444,9 @@ footer {
 
     #navNapit > .btn {
         width: 100%;
+    }
+
+    #footerNav {
+        display: block;
     }
 }

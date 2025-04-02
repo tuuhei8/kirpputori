@@ -166,7 +166,6 @@ const virheIlmoitus = document.getElementById('form-message').classList;
 function kirjauduIkkuna() {
     document.getElementById('id01').classList.toggle('show');
 }
- 
 
 window.onclick = function(event) {
    if (!event.target.matches('.kirjaududd')) {
@@ -300,7 +299,8 @@ function kassaPalaa() {
 }
 
 // Maksutapa pudotusvalikko
-function showPaymentForm() {
+function showPaymentForm(valinta) {
+    document.getElementById(valinta).checked = true
     const maksuValinnat = document.getElementsByName('maksutapa');
 
     for (i = 0; i < maksuValinnat.length; i++) {

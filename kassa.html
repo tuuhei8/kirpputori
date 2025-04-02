@@ -133,16 +133,16 @@
     </div>
     <!-- Maksuvaihtoehtoja -->
     <ul class="maksutavat" id="kassa02" style="list-style: none; display: none;">
-      <li>
-        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m1">
+      <li onclick="showPaymentForm('m1')">
+        <input type="radio" name="maksutapa" id="m1">
         <label for="m1">Maksutapa 1</label>
       </li>
-      <li>
-        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m2">
+      <li onclick="showPaymentForm('m2')">
+        <input type="radio" name="maksutapa" id="m2">
         <label for="m2">Maksutapa 2</label>
       </li>
-      <li>
-        <input onclick="showPaymentForm()" type="radio" name="maksutapa" id="m3">
+      <li onclick="showPaymentForm('m3')">
+        <input type="radio" name="maksutapa" id="m3">
         <label for="m3">Maksutapa 3</label>
       </li>
     </ul>
@@ -184,7 +184,18 @@
     </a>
   </div>
   <footer>
-    <span>näyttö &copy; 2025 esimerkki</span>
+    <div>
+      <ul id="footerNav">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="ostoskori.html">Ostoskori</a></li>
+        <li><a href="kassa.html">Kassa</a></li>
+        <li><a href="kayttoehdot.html">Kayttoehdot</a></li>
+        <li><a href="Profiili.html">Profiili</a></li>
+      </ul>
+    </div>
+    <div style="text-align: center;">
+      <span>näyttö &copy; 2025 esimerkki</span>
+    </div>
   </footer>
   <script src="main.js"></script>
 </body>
