@@ -260,7 +260,7 @@ input[type=text], input[type=password], input[type=email] {
 /* Kirjaudu sisään- ikkuna */
 #id01 {
     width: 460px;
-    height: 220px;
+    height: 230px;
     background-color: #bdbcbc;
     position: absolute;
     z-index: 1;
@@ -391,12 +391,20 @@ footer {
         width: 100%;
     }
 
+    .dropdown .btn{
+        width: 100%;
+    }
+
     .dropdownContent {
         width: 100%;
     }
 
-    .dropdown .btn{
-        width: 100%;
+   .dropdownContent a {
+        border-bottom: 1px black solid;
+    }
+
+    .dropdownContent a:last-child {
+        border-bottom: none;
     }
 
     .ms-auto {

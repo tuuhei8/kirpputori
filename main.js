@@ -112,6 +112,7 @@ loginForm.addEventListener("submit", function (event) {
         }, 2000);
     } else { //throw errors
         showMessage("Tarkista käyttäjätiedot!", "error");
+        kirjauduIkkuna();
         return;
     }
 });
@@ -159,18 +160,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Dropdown valikko kirjautumiselle
+const luokat = document.getElementById('id01').classList;
+const virheIlmoitus = document.getElementById('form-message').classList;
+
 function kirjauduIkkuna() {
     document.getElementById('id01').classList.toggle('show');
 }
+ 
 
-// window.onclick = function(event) {
-//     if (!event.target.matches('.kirjaududd')) {
-//         let luokat = document.getElementById('id01').classList;
-//         if (luokat.contains('show')) {
-//             luokat.remove('show');
-//         }
-//     }
-// }
+window.onclick = function(event) {
+   if (!event.target.matches('.kirjaududd')) {
+        if (luokat.contains('show')) {
+            luokat.remove('show');
+        }
+    }
+}
 
 // Nuoli-painike sivun yläosaan palaamiseksi
 const arrow = document.querySelector(".upArrow");
