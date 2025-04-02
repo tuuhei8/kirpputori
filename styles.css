@@ -151,7 +151,7 @@ form div.incorrect input {
     border-color: #f06272;
 }
 
-#form-message {
+.form-message {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;

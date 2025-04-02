@@ -3,7 +3,6 @@
 // Kirjautumistoiminnot:
 const registrationForm = document.getElementById("registrationForm");
 const loginForm = document.getElementById("loginForm");
-const formMessage = document.getElementById("form-message");
 
 registrationForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -17,7 +16,11 @@ registrationForm.addEventListener("submit", function (event) {
 
     allInputs.forEach(input => { //Clear the error messages if the user starts typing again
         input.addEventListener("input", () => {
+            const form = input.closest("form");
+            const formMessage = form.querySelector(".form-message");
+
             formMessage.innerText = "";
+
             if (input.parentElement.classList.contains("incorrect")) {
                 input.parentElement.classList.remove("incorrect");
             }
@@ -26,25 +29,25 @@ registrationForm.addEventListener("submit", function (event) {
 
     if (!username.trim() || username.length < 5) {
         document.getElementById("kayttajaNimi").parentElement.classList.add('incorrect');
-        showMessage("Käyttäjänimen täytyy olla vähintään 5 merkkiä pitkä!", "error");
+        showMessage(registrationForm, "Käyttäjänimen täytyy olla vähintään viisi merkkiä pitkä!");
         return;
     }
 
     if (!password.trim() || !isStrongPassword(password)) {
         document.getElementById("asetaPsw").parentElement.classList.add('incorrect');
-        showMessage("Salasanan täytyy sisältää pieniä ja isoja kirjaimia, sekä sisältää yhden numeron ja erikoismerkin!", "error");
+        showMessage(registrationForm, "Salasanan täytyy sisältää pieniä ja isoja kirjaimia, sekä sisältää yhden numeron ja erikoismerkin!");
         return;
     }
 
     if (verifyPassword != password) {
         document.getElementById("vahvistaPsw").parentElement.classList.add('incorrect');
-        showMessage("Salasanat eivät täsmää!", "error");
+        showMessage(registrationForm, "Salasanat eivät täsmää!");
         return;
     }
 
     if (!email.trim() || !isValidEmail(email)) {
         document.getElementById("asetaSposti").parentElement.classList.add('incorrect');
-        showMessage("Tarkista sähköpostiosoite!", "error");
+        showMessage(registrationForm, "Tarkista sähköpostiosoite!");
         return;
     }
 
@@ -52,7 +55,7 @@ registrationForm.addEventListener("submit", function (event) {
 
     if (users.some(user => user.email === email)) {
         //alert("Already exists");
-        showMessage("Tämä sähköposti on jo käytössä!", "error");
+        showMessage(registrationForm, "Tämä sähköposti on jo käytössä!");
         return;
     }
 
@@ -60,7 +63,7 @@ registrationForm.addEventListener("submit", function (event) {
     localStorage.setItem("users", JSON.stringify(users));
 
     //alert("Jep!");
-    showMessage("Tilin luominen onnistui!", "success");
+    showMessage(registrationForm, "Tilin luominen onnistui!", false);
     registrationForm.reset();
 
 });
@@ -74,9 +77,10 @@ function isStrongPassword(password) {
     return tester.test(password);
 }
 
-function showMessage(message, type) {
+function showMessage(form, message, isError = true) {
+    const formMessage = form.querySelector(".form-message");
     formMessage.innerText = message;
-    formMessage.className = type;
+    formMessage.style.color = isError ? "red" : "green";
 }
 
 loginForm.addEventListener("submit", function (event) {
@@ -91,9 +95,13 @@ loginForm.addEventListener("submit", function (event) {
 
     const allInputs = [document.getElementById("kNimi"), document.getElementById("psw")];
 
-    allInputs.forEach(input => { //Clear the errors if the user starts typing again
+    allInputs.forEach(input => { //Clear the error messages if the user starts typing again
         input.addEventListener("input", () => {
+            const form = input.closest("form");
+            const formMessage = form.querySelector(".form-message");
+
             formMessage.innerText = "";
+            
             if (input.parentElement.classList.contains("incorrect")) {
                 input.parentElement.classList.remove("incorrect");
             }
@@ -105,13 +113,13 @@ loginForm.addEventListener("submit", function (event) {
         document.getElementById("logout").style.display = "block";
         document.getElementById("login").style.display = "none";
         document.getElementById("createAccount").style.display = "none";
-        showMessage("Kirjautuminen onnistui!", "success");
+        showMessage(loginForm, "Kirjautuminen onnistui!", false);
 
         setTimeout(() => { //Close the login window automatically in 2 seconds if the user info is correct
             document.getElementById("id01").classList.remove("show");
         }, 2000);
     } else { //throw errors
-        showMessage("Tarkista käyttäjätiedot!", "error");
+        showMessage(loginForm, "Tarkista käyttäjätiedot!");
         kirjauduIkkuna();
         return;
     }
