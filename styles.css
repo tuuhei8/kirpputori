@@ -191,6 +191,7 @@ input[type=text], input[type=password], input[type=email] {
     padding: 16px;
     border: none;
     border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
 }
 
 .kassa form > div > input[type=text] {
@@ -204,7 +205,7 @@ input[type=text], input[type=password], input[type=email] {
 #summary {
     background-color: #c9c8c8;
     padding: 16px;
-    border: none;
+    border: gray solid 1px;
     border-radius: 5px;
 }
 
@@ -218,6 +219,7 @@ input[type=text], input[type=password], input[type=email] {
     font-size: 1.3rem;
     margin-top: 10px;
     opacity: 0.9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 #summary button:hover {
@@ -237,10 +239,6 @@ input[type=text], input[type=password], input[type=email] {
     border-radius: 5px;
 }
 
-.maksutavat > li > label {
-    width: 95%;
-}
-
 .maksutavat > li:hover {
     background-image: linear-gradient(0deg, rgb(66, 172, 172), rgb(76, 228, 228));
     cursor: pointer;
@@ -251,7 +249,7 @@ input[type=text], input[type=password], input[type=email] {
     cursor: pointer;
 }
 
-#tilausNappi {
+#vahvistaTiedot {
     width: 80%;
     background-color: rgb(17, 118, 180);
     border-radius: 5px;
@@ -261,6 +259,7 @@ input[type=text], input[type=password], input[type=email] {
     font-size: 1.3rem;
     margin-top: 10px;
     opacity: 0.9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 #tilausNappi:hover {
