@@ -169,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Dropdown valikko kirjautumiselle
 const luokat = document.getElementById('id01').classList;
-const virheIlmoitus = document.getElementById('form-message').classList;
 
 function kirjauduIkkuna() {
     document.getElementById('id01').classList.toggle('show');
