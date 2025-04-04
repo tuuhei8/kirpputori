@@ -408,7 +408,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
     #id01 {
         width: 100%;
         position: relative;
@@ -453,5 +453,12 @@ footer {
 
     #footerNav {
         display: block;
+    }
+
+    .bi-cart-fill {
+        top: 5px;
+        right: 5px;
+        position: absolute;
+        font-size: 1.7rem;
     }
 }
