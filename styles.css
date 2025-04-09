@@ -64,6 +64,12 @@ nav .active {
     display: block;
 }
 
+.bi-cart-fill {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0px 15px;
+}
+
 /* Tilin luonti- ikkuna */
 .modal {
     display: none;
@@ -402,7 +408,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
     #id01 {
         width: 100%;
         position: relative;
@@ -447,5 +453,12 @@ footer {
 
     #footerNav {
         display: block;
+    }
+
+    .bi-cart-fill {
+        top: 5px;
+        right: 5px;
+        position: absolute;
+        font-size: 1.7rem;
     }
 }
