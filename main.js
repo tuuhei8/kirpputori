@@ -83,6 +83,16 @@ function showMessage(form, message, isError = true) {
     formMessage.style.color = isError ? "red" : "green";
 }
 
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -90,8 +100,6 @@ loginForm.addEventListener("submit", function (event) {
     const password = document.getElementById("psw").value;
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    const user = users.find(user => user.username === username && user.password === password);
 
     const allInputs = [document.getElementById("kNimi"), document.getElementById("psw")];
 
@@ -108,21 +116,30 @@ loginForm.addEventListener("submit", function (event) {
         });
     });
 
-    if (user) {
-        localStorage.setItem("loggedInUser", JSON.stringify(user));
-        document.getElementById("logout").style.display = "block";
-        document.getElementById("login").style.display = "none";
-        document.getElementById("createAccount").style.display = "none";
-        showMessage(loginForm, "Kirjautuminen onnistui!", false);
+    const userNameInput = document.getElementById("kNimi");
+    const passwordInput = document.getElementById("psw");
 
-        setTimeout(() => { //Close the login window automatically in 2 seconds if the user info is correct
-            document.getElementById("id01").classList.remove("show");
-        }, 2000);
-    } else { //throw errors
-        showMessage(loginForm, "Tarkista käyttäjätiedot!");
+    const userByUsername = users.find(user => user.username === username);
+
+    if (!userByUsername) {
+        showMessage(loginForm, "Tarkista käyttäjänimi!");
+        userNameInput.parentElement.classList.add("incorrect");
         kirjauduIkkuna();
         return;
     }
+
+    if (userByUsername.password !== password) {
+        showMessage(loginForm, "Tarkista salasana!");
+        passwordInput.parentElement.classList.add("incorrect");
+        kirjauduIkkuna();
+        return;
+    }
+
+    localStorage.setItem("loggedInUser", JSON.stringify(userByUsername));
+    document.getElementById("logout").style.display = "block";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("createAccount").style.display = "none";
+    showToast("Kirjautuminen onnistui!");
 });
 
 document.addEventListener("DOMContentLoaded", function () {

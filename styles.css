@@ -149,9 +149,6 @@ nav .active {
     display: table;
 }
 
-form div.incorrect label {
-    background-color: #f06272;
-}
 
 form div.incorrect input {
     border-color: #f06272;
@@ -163,6 +160,29 @@ form div.incorrect input {
     margin-top: 5px;
     padding: 5px;
     text-align: center;
+}
+
+.toast-message {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+.toast-message.show {
+    visibility: visible;
+    opacity: 1;
+    top: 40px;
 }
 
 .success {

@@ -35,7 +35,7 @@
             <div id="id01" class="hide kirjaududd">
               <span onclick="kirjauduIkkuna()"
               class="suljedd" title="Sulje ikkuna">&times;</span>
-              <form id="loginForm" class="kirjaududd">
+              <form id="loginForm" novalidate class="kirjaududd">
                 <div>
                   <label for="kNimi"><b class="kirjaududd">Käyttäjänimi</b></label>
                   <input class="kirjaududd" id="kNimi" type="text" placeholder="Käyttäjänimi" name="kNimi" required>
@@ -59,7 +59,7 @@
   </header>
   <!-- Tilin luonti -->
   <div id="id02" class="modal">
-    <form id="registrationForm" class="modal-content animate">
+    <form id="registrationForm" novalidate class="modal-content animate">
       <div class="container">
         <span onclick="document.getElementById('id02').style.display='none'" class="sulje" title="Sulje ikkuna">&times;</span>
         <h1>Luo tili</h1>
@@ -123,5 +123,6 @@
     </div>
   </footer>
   <script src="main.js"></script>
+  <div id="toast" class="toast-message">Kirjautuminen onnistui!</div>
 </body>
 </html>
