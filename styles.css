@@ -368,9 +368,7 @@ input[type=text], input[type=password], input[type=email] {
 
 .esineet {
     width: 340px;
-    height: 380px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin: 10px;
+    height: 340px;
 }
 
 /* Footer */
