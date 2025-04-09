@@ -165,25 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-// Kauppatavaran laittaminen näkyviin "hyllyyn":
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Dropdown valikko kirjautumiselle
 const luokat = document.getElementById('id01').classList;
 
