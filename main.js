@@ -297,11 +297,11 @@ function kassaVirhe(kVirheilmoitus) {
 }
 
 function tarkistaNimi(nimi) {
-    return /^[A-Zåäö]+[-A-Za-zåäö]+$/.test(nimi);
+    return /^[A-ZÅÄÖ]+[-A-ZÅÄÖa-zåäö]+$/.test(nimi);
 }
 
 function tarkistaOsoite(osoite) {
-    return /^[A-Zåäö]+[a-zåäö]+\s[A-ZÅÄÖ0-9\d]+$/.test(osoite);
+    return /^[A-ZÅÄÖ]+[a-zåäö]+\s[A-ZÅÄÖ0-9\d]+$/.test(osoite);
 }
 
 // Palaa edelliseen vaiheeseen kassa-sivulla
