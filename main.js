@@ -93,6 +93,15 @@ function showToast(message) {
     }, 3000);
 }
 
+function toggleProfiles(show) {
+    const displayStyle = show ? "inline-block" : "none";
+    const profileLink = document.getElementById("profileLink");
+    const footerProfile = document.getElementById("footerProfile");
+
+    if (profileLink) profileLink.style.display = displayStyle;
+    if (footerProfile) footerProfile.style.display = displayStyle;
+}
+
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -136,6 +145,7 @@ loginForm.addEventListener("submit", function (event) {
     }
 
     localStorage.setItem("loggedInUser", JSON.stringify(userByUsername));
+    toggleProfiles(true);
     document.getElementById("logout").style.display = "block";
     document.getElementById("login").style.display = "none";
     document.getElementById("createAccount").style.display = "none";
@@ -150,19 +160,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
+    if (!loggedInUser) {
+        toggleProfiles(false);
+    }
+
     if (loggedInUser) {
         logoutDiv.style.display = "block";
         logInDiv.style.display = "none";
         createAccountBtn.style.display = "none";
     }
-
-    logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("loggedInUser");
-        logoutDiv.style.display = "none";
-        logInDiv.style.display = "block";
-        createAccountBtn.style.display = "block";
-        window.location.href = "index.html";
-    });
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("loggedInUser");
+            logoutDiv.style.display = "none";
+            logInDiv.style.display = "block";
+            createAccountBtn.style.display = "block";
+            window.location.href = "index.html";
+        });
+    }
 });
 
 // Dropdown valikko kirjautumiselle
