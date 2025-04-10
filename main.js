@@ -297,7 +297,7 @@ function kassaVirhe(kVirheilmoitus) {
 }
 
 function tarkistaNimi(nimi) {
-    return /^[A-Zåäö]+[a-zåäö]+$/.test(nimi);
+    return /^[A-Zåäö]+[-A-Za-zåäö]+$/.test(nimi);
 }
 
 function tarkistaOsoite(osoite) {
