@@ -387,7 +387,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .esineet {
-    width: 340px;
+    min-width: 340px;
     height: 340px;
 }
 

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         orders.forEach(order => {
             const div = document.createElement("div");
-            div.className = "esineet"; 
+            div.className = "esineet col-md-4"; 
 
             div.innerHTML = `
                 <div class="card shadow-sm p-3 mb-4 bg-white rounded">
