@@ -194,12 +194,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Pudotusvalikon toiminta mobiililaitteilla
 
-if (screen.width < 820) {
-    const ddValikko = document.getElementById('ddValikko')
-    const dropdownContent = document.getElementsByClassName('dropdownContent')[0]
-    ddValikko.addEventListener('click', () => {
-        dropdownContent.classList.toggle('show');
-    })
+
+const ddValikko = document.getElementById('ddValikko')
+const dropdownContent = document.getElementsByClassName('dropdownContent')[0]
+ddValikko.addEventListener('click', () => {
+    dropdownContent.classList.toggle('show');
+})
+
+window.onclick = function(event) {
+    console.log('w');
 }
 
 
@@ -211,9 +214,16 @@ function kirjauduIkkuna() {
 }
 
 window.onclick = function(event) {
+    
    if (!event.target.matches('.kirjaududd')) {
         if (luokat.contains('show')) {
             luokat.remove('show');
+        }
+    }
+
+    if (!event.target.matches('.ddLinkit')){
+        if (dropdownContent.classList.contains('show')) {
+            dropdownContent.classList.remove('show');
         }
     }
 }

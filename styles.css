@@ -59,9 +59,7 @@ nav .active {
     background-color: #a8a8a8;
 }
 
-.dropdown:hover .dropdownContent {
-    display: block;
-}
+
 
 .bi-cart-fill {
     color: white;
