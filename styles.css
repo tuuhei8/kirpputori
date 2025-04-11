@@ -425,9 +425,13 @@ footer {
 }
 
 /* Mobiili */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 820px) {
     .clearfix button {
         width: 100%;
+    }
+
+    .dropdown:hover {
+        pointer-events: none;
     }
 }
 
