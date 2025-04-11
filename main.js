@@ -193,9 +193,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Pudotusvalikon toiminta mobiililaitteilla
-const ddValikko = document.getElementById('ddValikko')
-const dropdownContent = document.getElementsByClassName('dropdownContent')[0]
+
 if (screen.width < 820) {
+    const ddValikko = document.getElementById('ddValikko')
+    const dropdownContent = document.getElementsByClassName('dropdownContent')[0]
     ddValikko.addEventListener('click', () => {
         dropdownContent.classList.toggle('show');
     })
