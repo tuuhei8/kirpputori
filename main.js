@@ -94,7 +94,7 @@ function showToast(message) {
 }
 
 function toggleProfiles(show) {
-    const displayStyle = show ? "inline-block" : "none";
+    const displayStyle = show ? "block" : "none";
     const profileLink = document.getElementById("profileLink");
     const footerProfile = document.getElementById("footerProfile");
 
