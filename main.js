@@ -193,18 +193,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Pudotusvalikon toiminta mobiililaitteilla
+const ddValikko = document.getElementById('ddValikko');
+const dropdownContent = document.getElementsByClassName('dropdownContent')[0];
 
-
-const ddValikko = document.getElementById('ddValikko')
-const dropdownContent = document.getElementsByClassName('dropdownContent')[0]
 ddValikko.addEventListener('click', () => {
     dropdownContent.classList.toggle('show');
 })
-
-window.onclick = function(event) {
-    console.log('w');
-}
-
 
 // Dropdown valikko kirjautumiselle
 const luokat = document.getElementById('id01').classList;
