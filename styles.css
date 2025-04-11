@@ -452,6 +452,7 @@ footer {
 
     .dropdownContent {
         width: 100%;
+        position: relative;
     }
 
    .dropdownContent a {
