@@ -83,9 +83,17 @@ function showMessage(form, message, isError = true) {
     formMessage.style.color = isError ? "red" : "green";
 }
 
-function showToast(message) {
+function showToast(message, isError = false) {
     const toast = document.getElementById("toast");
+
     toast.innerText = message;
+
+    toast.classList.remove("toast-error", "show");
+
+    if (isError) {
+        toast.classList.add("toast-error");
+    }
+
     toast.classList.add("show");
 
     setTimeout(() => {
@@ -175,7 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
             logoutDiv.style.display = "none";
             logInDiv.style.display = "block";
             createAccountBtn.style.display = "block";
-            window.location.href = "index.html";
+            showToast("Olet kirjautunut ulos", true);
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2500);
         });
     }
 });
