@@ -429,10 +429,6 @@ footer {
     .clearfix button {
         width: 100%;
     }
-
-    .dropdown:hover {
-        pointer-events: none;
-    }
 }
 
 @media screen and (max-width: 490px) {
