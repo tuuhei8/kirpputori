@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p>Määrä: ${order.quantity}</p>
                         <p>Hinta: <strong>${order.price}€</strong></p>
                         <p><strong>Yhteensä: ${order.total}€</strong></p>
-                        <button class="btn btn-success">Lisää ostoskoriin</button>
+                        <button class="btn btn-success add-to-cart">Lisää ostoskoriin</button>
                     </div>
                 </div>
             `;
@@ -33,4 +33,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     displayOrders();
+});
+window.addToCart = function(order) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(order);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Tuote lisätty ostoskoriin!");
+};
+
+hylly.addEventListener("click", function (e) {
+    if (e.target.classList.contains("add-to-cart")) {
+        const card = e.target.closest(".card-body");
+        const itemName = card.querySelector("h3").textContent;
+        const quantityText = card.querySelector("p:nth-of-type(1)").textContent;
+        const priceText = card.querySelector("p:nth-of-type(2)").textContent;
+
+        const quantity = parseInt(quantityText.replace("Määrä: ", ""));
+        const price = parseFloat(priceText.replace("Hinta: ", "").replace("€", ""));
+        const total = (quantity * price).toFixed(2);
+
+        const order = { itemName, quantity, price, total };
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(order);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Tuote lisätty ostoskoriin!");
+    }
 });
