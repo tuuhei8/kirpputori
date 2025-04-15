@@ -11,4 +11,6 @@ Näiden lisäksi voisi harkita myös seuraavia ominaisuuksia:
 - Käyttäjä voi muuttaa myyntiin asettamansa esineen hintaa
 - Ylläpitäjätili voi lukita/poistaa tavallisia käyttäjätilejä kokonaan
 
-Ehdotan myös että käyttäjän luomat tiedot projektissa talletetaan sessionStorageen testaamisen helpottamiseksi.
+Päivitys:
+
+Lopullista versiota on muutettu niin että kaikki kirjautuneet käyttäjät ovat ylläpitäjiä.
