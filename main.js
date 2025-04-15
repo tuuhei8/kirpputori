@@ -83,9 +83,17 @@ function showMessage(form, message, isError = true) {
     formMessage.style.color = isError ? "red" : "green";
 }
 
-function showToast(message) {
+function showToast(message, isError = false) {
     const toast = document.getElementById("toast");
+
     toast.innerText = message;
+
+    toast.classList.remove("toast-error", "show");
+
+    if (isError) {
+        toast.classList.add("toast-error");
+    }
+
     toast.classList.add("show");
 
     setTimeout(() => {
@@ -94,7 +102,7 @@ function showToast(message) {
 }
 
 function toggleProfiles(show) {
-    const displayStyle = show ? "inline-block" : "none";
+    const displayStyle = show ? "block" : "none";
     const profileLink = document.getElementById("profileLink");
     const footerProfile = document.getElementById("footerProfile");
 
@@ -175,10 +183,22 @@ document.addEventListener("DOMContentLoaded", function () {
             logoutDiv.style.display = "none";
             logInDiv.style.display = "block";
             createAccountBtn.style.display = "block";
-            window.location.href = "index.html";
+            showToast("Olet kirjautunut ulos", true);
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2500);
         });
     }
 });
+
+// Pudotusvalikon toiminta mobiililaitteilla
+const ddValikko = document.getElementById('ddValikko');
+const dropdownContent = document.getElementsByClassName('dropdownContent')[0];
+
+ddValikko.addEventListener('click', () => {
+    dropdownContent.classList.toggle('show');
+})
 
 // Dropdown valikko kirjautumiselle
 const luokat = document.getElementById('id01').classList;
@@ -188,9 +208,16 @@ function kirjauduIkkuna() {
 }
 
 window.onclick = function(event) {
+    
    if (!event.target.matches('.kirjaududd')) {
         if (luokat.contains('show')) {
             luokat.remove('show');
+        }
+    }
+
+    if (!event.target.matches('.ddLinkit')){
+        if (dropdownContent.classList.contains('show')) {
+            dropdownContent.classList.remove('show');
         }
     }
 }
