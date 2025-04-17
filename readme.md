@@ -1,7 +1,7 @@
 Oheinen use case diagrammi esittelee mielestäni hyvät minimivaatimukset projektille:
 
 - Käyttäjä voi luoda tilin
-- Käyttäjä voi listätä myytäviä esineitä ja asettaa niille haluamansa hinnan
+- Käyttäjä voi lisätä myytäviä esineitä ja asettaa niille haluamansa hinnan
 - Käyttäjä voi ostaa haluamansa esineen
 
 Näiden lisäksi voisi harkita myös seuraavia ominaisuuksia:
