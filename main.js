@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Pudotusvalikon toiminta mobiililaitteilla
+// Pudotusvalikon toiminta
 const ddValikko = document.getElementById('ddValikko');
 const dropdownContent = document.getElementsByClassName('dropdownContent')[0];
 
