@@ -14,3 +14,4 @@ Näiden lisäksi voisi harkita myös seuraavia ominaisuuksia:
 Päivitys:
 
 Lopullista versiota on muutettu niin että kaikki kirjautuneet käyttäjät ovat ylläpitäjiä.
+(Voi poistaa minkä tahansa esineen.)
